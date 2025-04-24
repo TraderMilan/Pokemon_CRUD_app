@@ -23,9 +23,9 @@ public class HikariCPDataSource {
             logger.error("Error while loading application properties", e);
         }
 
-        config.setJdbcUrl("jdbc:mysql://localhost:3306/" + prop.getProperty("db.name"));
-        config.setUsername(prop.getProperty("db.user_name"));
-        config.setPassword(prop.getProperty("db.password"));
+        config.setJdbcUrl(prop.getProperty("jdbc.url"));
+        config.setUsername(prop.getProperty("jdbc.username"));
+        config.setPassword(prop.getProperty("jdbc.password"));
         ds = new HikariDataSource(config);
     }
 
